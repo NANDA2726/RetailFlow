@@ -1,0 +1,231 @@
+{
+  "run_at": "2026-11-02T15:51:22.296122+00:00",
+  "total": 37,
+  "passed": 35,
+  "warnings": 2,
+  "failed": 0,
+  "results": [
+    {
+      "check": "rowcount bronze=silver: customers",
+      "severity": "error",
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "check": "rowcount bronze=silver: orders",
+      "severity": "error",
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "check": "rowcount bronze=silver: order_items",
+      "severity": "error",
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "check": "rowcount bronze=silver: order_payments",
+      "severity": "error",
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "check": "rowcount bronze=silver: products",
+      "severity": "error",
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "check": "rowcount bronze=silver: sellers",
+      "severity": "error",
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "check": "rowcount silver=gold: fact_order_items",
+      "severity": "error",
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "check": "rowcount silver=gold: fact_payments",
+      "severity": "error",
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "check": "rowcount silver=gold: fact_reviews",
+      "severity": "error",
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "check": "rowcount silver=gold: dim_customer",
+      "severity": "error",
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "check": "rowcount silver=gold: dim_product",
+      "severity": "error",
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "check": "rowcount silver=gold: dim_seller",
+      "severity": "error",
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "check": "unique: silver.orders(order_id)",
+      "severity": "error",
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "check": "unique: dim_customer(customer_key)",
+      "severity": "error",
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "check": "unique: dim_product(product_key)",
+      "severity": "error",
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "check": "unique: dim_seller(seller_key)",
+      "severity": "error",
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "check": "unique: dim_date(date_key)",
+      "severity": "error",
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "check": "unique grain: fact_order_items(order_id, order_item_id)",
+      "severity": "error",
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "check": "unique grain: fact_payments(order_id, payment_sequential)",
+      "severity": "error",
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "check": "unique grain: fact_reviews(review_id)",
+      "severity": "error",
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "check": "not null: fact_order_items.customer_key",
+      "severity": "error",
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "check": "not null: fact_order_items.product_key",
+      "severity": "error",
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "check": "not null: fact_order_items.seller_key",
+      "severity": "error",
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "check": "not null: fact_order_items.purchase_date_key",
+      "severity": "error",
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "check": "fk: fact_order_items.customer_key -> dim_customer",
+      "severity": "error",
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "check": "fk: fact_order_items.product_key -> dim_product",
+      "severity": "error",
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "check": "fk: fact_order_items.seller_key -> dim_seller",
+      "severity": "error",
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "check": "fk: fact_order_items.purchase_date_key -> dim_date",
+      "severity": "error",
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "check": "fk: fact_payments.customer_key -> dim_customer",
+      "severity": "error",
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "check": "range: price >= 0",
+      "severity": "error",
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "check": "range: freight_value >= 0",
+      "severity": "error",
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "check": "range: payment_value >= 0",
+      "severity": "error",
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "check": "range: review_score between 1 and 5",
+      "severity": "error",
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "check": "revenue silver=gold: sum(price)",
+      "severity": "error",
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "check": "payments silver=gold: sum(payment_value)",
+      "severity": "error",
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "check": "quirk: delivered orders with no delivery timestamp",
+      "severity": "warn",
+      "status": "WARN",
+      "violations": 8
+    },
+    {
+      "check": "quirk: orders with no line items",
+      "severity": "warn",
+      "status": "WARN",
+      "violations": 775
+    }
+  ]
+}
